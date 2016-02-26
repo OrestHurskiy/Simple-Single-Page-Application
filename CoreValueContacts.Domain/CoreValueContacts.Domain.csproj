@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A3AEA36E-8C96-4144-AFE6-B98B76E2DC8D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CoreValueContacts.Domain</RootNamespace>
+    <AssemblyName>CoreValueContacts.Domain</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Entities\Configuration\CustomerConfiguration.cs" />
+    <Compile Include="Entities\Configuration\EntityBaseConfiguration.cs" />
+    <Compile Include="Entities\Configuration\ProjectConfiguration.cs" />
+    <Compile Include="Entities\Configuration\RoleConfiguration.cs" />
+    <Compile Include="Entities\Configuration\UserConfiguration.cs" />
+    <Compile Include="Entities\Configuration\UserInRoleConfiguration.cs" />
+    <Compile Include="Entities\Core\EntitiesContext.cs" />
+    <Compile Include="Entities\Core\IEntity.cs" />
+    <Compile Include="Entities\Core\PaginatedList.cs" />
+    <Compile Include="Entities\Customer.cs" />
+    <Compile Include="Entities\Extensions\IQueryableExtensions.cs" />
+    <Compile Include="Entities\Extensions\RoleRepositoryExtensions.cs" />
+    <Compile Include="Entities\Extensions\UserRepositoryExtensions.cs" />
+    <Compile Include="Entities\Project.cs" />
+    <Compile Include="Entities\Role.cs" />
+    <Compile Include="Entities\User.cs" />
+    <Compile Include="Entities\UserInRole.cs" />
+    <Compile Include="Infrastructure\DbFactory.cs" />
+    <Compile Include="Infrastructure\Disposable.cs" />
+    <Compile Include="Infrastructure\IDbFactory.cs" />
+    <Compile Include="Infrastructure\IUnitOfWork.cs" />
+    <Compile Include="Infrastructure\UnitOfWork.cs" />
+    <Compile Include="Migrations\201601201855031_Db first.cs" />
+    <Compile Include="Migrations\201601201855031_Db first.Designer.cs">
+      <DependentUpon>201601201855031_Db first.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201601211019595_Add-Project-Customer-table.cs" />
+    <Compile Include="Migrations\201601211019595_Add-Project-Customer-table.Designer.cs">
+      <DependentUpon>201601211019595_Add-Project-Customer-table.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201601260954298_Add projects data.cs" />
+    <Compile Include="Migrations\201601260954298_Add projects data.Designer.cs">
+      <DependentUpon>201601260954298_Add projects data.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\EntityBaseRepository.cs" />
+    <Compile Include="Repositories\IEntityBaseRepository.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201601201855031_Db first.resx">
+      <DependentUpon>201601201855031_Db first.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201601211019595_Add-Project-Customer-table.resx">
+      <DependentUpon>201601211019595_Add-Project-Customer-table.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201601260954298_Add projects data.resx">
+      <DependentUpon>201601260954298_Add projects data.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

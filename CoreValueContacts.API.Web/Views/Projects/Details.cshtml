@@ -1,0 +1,31 @@
+﻿@model CoreValueContacts.API.Model.Dtos.ProjectDto
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div> 
+        <h2>Project client data test</h2>
+        <table>
+            <tr>
+                <th>Project Id</th>
+                <td>
+                  @Model.Id
+                </td>
+                <th>Project Name</th>
+                <td>
+                    @Model.Name
+                </td>
+                <th>Number of employers on project</th>
+                <td>
+                    @Model.NumberOfEmployers
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

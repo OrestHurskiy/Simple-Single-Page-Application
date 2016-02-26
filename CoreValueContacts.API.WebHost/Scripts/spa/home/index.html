@@ -1,0 +1,35 @@
+﻿<hr />
+<div class="row">
+
+    <div class="col-md-8">
+        <div class="panel panel-primary" id="panelProjects">
+            <div class="panel-heading">
+                <h3 class="panel-title">Projects</h3>
+            </div>
+
+            <div class="panel-body">
+
+                <div class="col-xs-12 col-sm-2" ng-repeat="project in projects">
+                    <div class="panel panel-default">
+
+                        <div class="panel-heading">
+                            <strong>{{project.Name}}</strong>
+                        </div>
+
+                        <div class="panel-body">
+                            <div class="media">
+                                <div class="media-body">
+                                    <label class="label-info">{{project.NumberOfEmployers}}</label><br />
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+</div>

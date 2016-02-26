@@ -1,0 +1,23 @@
+{
+  "name": "corevaluecontacts",
+  "description": "",
+  "main": "",
+  "authors": [
+    "OrestHurskiy <ohurskiy@malkosua.com>"
+  ],
+  "license": "MIT",
+  "moduleType": [],
+  "homepage": "",
+  "private": true,
+  "dependencies": {
+    "jquery": "~2.2.0",
+    "jquery-validation": "~1.14.0",
+    "jquery-validation-unobtrusive": "~3.2.5",
+    "modernizr": "~3.3.1",
+    "respond": "respond-minmax#~1.4.2",
+    "bootstrap": "~3.3.6",
+    "angular": "~1.4.9",
+    "angular-base64": "~2.0.5",
+    "angular-route": "~1.4.9"
+  }
+}
